@@ -2,8 +2,8 @@ user_agent_parsers:
   #### SPECIAL CASES TOP ####
 
   # @note: iOS / OSX Applications
-  - regex: '(CFNetwork)(?:/(\d+)\.(\d+)\.?(\d+)?)?'
-    family_replacement: 'CFNetwork'
+  - regex: '(.+)(?: \(.+\)|/[^\s]+) CFNetwork(?:/(\d+)\.(\d+)\.?(\d+)?)?'
+    family_replacement: 'CFNetwork ($1)'
 
   # Pingdom
   - regex: '(Pingdom.com_bot_version_)(\d+)\.(\d+)'
