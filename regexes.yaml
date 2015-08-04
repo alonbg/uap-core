@@ -2,7 +2,7 @@ user_agent_parsers:
   #### SPECIAL CASES TOP ####
 
   # @note: iOS / OSX Applications
-  - regex: '([^/\(\d\.]*)(?:[/\(\d].*)?CFNetwork(?:/(\d+)\.(\d+)\.?(\d+)?)?'
+  - regex: '([^/\(\d]*)(?:\d+)?(?:[/\(\d].*)?CFNetwork(?:/(\d+)\.(\d+)\.?(\d+)?)?'
     family_replacement: 'CFNetwork $1'
 
   # Pingdom
@@ -28,6 +28,7 @@ user_agent_parsers:
 
   # Downloader ...
   - regex: '(Google-HTTP-Java-Client|Apache-HttpClient|http%20client|Python-urllib|HttpMonitor|TLSProber|WinHTTP|JNLP)(?:[ /](\d+)(?:\.(\d+)(?:\.(\d+))?)?)?'
+    family_replacement: '$1'
 
   # Bots
   - regex: '(1470\.net crawler|50\.nu|8bo Crawler Bot|Aboundex|Accoona-[A-z]+-Agent|AdsBot-Google(?:-[a-z]+)?|altavista|AppEngine-Google|archive.*?\.org_bot|archiver|Ask Jeeves|[Bb]ai[Dd]u[Ss]pider(?:-[A-Za-z]+)*|bingbot|BingPreview|blitzbot|BlogBridge|BoardReader(?: [A-Za-z]+)*|boitho.com-dc|BotSeer|\b\w*favicon\w*\b|\bYeti(?:-[a-z]+)?|Catchpoint bot|[Cc]harlotte|Checklinks|clumboot|Comodo HTTP\(S\) Crawler|Comodo-Webinspector-Crawler|ConveraCrawler|CRAWL-E|CrawlConvera|Daumoa(?:-feedfetcher)?|Feed Seeker Bot|findlinks|Flamingo_SearchEngine|FollowSite Bot|furlbot|Genieo|gigabot|GomezAgent|gonzo1|(?:[a-zA-Z]+-)?Googlebot(?:-[a-zA-Z]+)?|Google SketchUp|grub-client|gsa-crawler|heritrix|HiddenMarket|holmes|HooWWWer|htdig|ia_archiver|ICC-Crawler|Icarus6j|ichiro(?:/mobile)?|IconSurf|IlTrovatore(?:-Setaccio)?|InfuzApp|Innovazion Crawler|InternetArchive|IP2[a-z]+Bot|jbot\b|KaloogaBot|Kraken|Kurzor|larbin|LEIA|LesnikBot|Linguee Bot|LinkAider|LinkedInBot|Lite Bot|Llaut|lycos|Mail\.RU_Bot|masidani_bot|Mediapartners-Google|Microsoft .*? Bot|mogimogi|mozDex|MJ12bot|msnbot(?:-media *)?|msrbot|netresearch|Netvibes|NewsGator[^/]*|^NING|Nutch[^/]*|Nymesis|ObjectsSearch|Orbiter|OOZBOT|PagePeeker|PagesInventory|PaxleFramework|Peeplo Screenshot Bot|PlantyNet_WebRobot|Pompos|Read%20Later|Reaper|RedCarpet|Retreiver|Riddler|Riddler|Rival IQ|scooter|Scrapy|Scrubby|searchsight|seekbot|semanticdiscovery|Simpy|SimplePie|SEOstats|SimpleRSS|Slurp|snappy|Speedy Spider|Squrl Java|TheUsefulbot|ThumbShotsBot|Thumbshots\.ru|TwitterBot|URL2PNG|Vagabondo|VoilaBot|^vortex|Votay bot|^voyager|WASALive.Bot|Web-sniffer|WebThumb|WeSEE:[A-z]+|WhatWeb|WIRE|WordPress|Wotbox|www\.almaden\.ibm\.com|Xenu(?:.s)? Link Sleuth|Xerka [A-z]+Bot|yacy(?:bot)?|Yahoo[a-z]*Seeker|Yahoo! Slurp|Yandex\w+|YodaoBot(?:-[A-z]+)?|YottaaMonitor|Yowedo|^Zao|^Zao-Crawler|ZeBot_www\.ze\.bz|ZooShot|ZyBorg)(?:[ /]v?(\d+)(?:\.(\d+)(?:\.(\d+))?)?)?'
@@ -312,8 +313,16 @@ user_agent_parsers:
 
   # Browser major_version.minor_version.beta_version (space instead of slash)
   - regex: '(iRider|Crazy Browser|SkipStone|iCab|Lunascape|Sleipnir|Maemo Browser) (\d+)\.(\d+)\.(\d+)'
+
+  # Generic Android Browser
+  - regex: '(Dalvik)/(\d+)\.(\d+).*Android'
+    family_replacement: 'Android Webkit'
+  - regex: '^(Mozilla)/.*Android.*Version/(\d+)\.(\d+)'
+    family_replacement: 'Safari Webkit'
+
   # Browser major_version.minor_version (space instead of slash)
-  - regex: '(iCab|Lunascape|Opera|Android|Jasmine|Polaris) (\d+)\.(\d+)\.?(\d+)?'
+  #- regex: '(iCab|Lunascape|Opera|Jasmine|Polaris|Android) (\d+)\.(\d+)\.?(\d+)?'
+  - regex: '(iCab|Lunascape|Opera|Jasmine|Polaris) (\d+)\.(\d+)\.?(\d+)?'
 
   # Kindle WebKit
   - regex: '(Kindle)/(\d+)\.(\d+)'
@@ -337,6 +346,17 @@ user_agent_parsers:
 
   - regex: '(Android) Honeycomb'
     v1_replacement: '3'
+
+  # AVG
+  #AVG; Android 5.0; klte; pid/100 vc/301 ver/4.3.1.1.213361
+  - regex: '(AVG);.*Android.*ver/(\d+)\.(\d+)\.?(\d+)'
+
+  # Generic Android Apps
+  #SonyEricssonST27i Build/6.0.B.3.184 stagefright/1.1 (Linux;Android 2.3.7)
+  #GoogleAnalytics/1.4.2 (Linux; U; Android 4.4.4; de-at; D2303 Build/18.3.1.C.0.21)
+  - regex: '([^\s]+)(?:\s|/)(\d+)\.?(\d+)?\.?(\d+)?\s?\(.*[Aa]ndroid.*\)$'
+  #Instagram 6.22.0 Android (18/4.3; 320dpi; 1440x1439; RIM/BlackBerry; Passport; Passport; SQW100-1; de_DE)
+  - regex: '^(.+)(?:\s|/)(\d+)\.?(\d+)?\.?(\d+)?\s[Aa]ndroid'
 
   # desktop mode
   # http://www.anandtech.com/show/3982/windows-phone-7-review
@@ -369,6 +389,9 @@ user_agent_parsers:
 
   - regex: '(BonEcho)/(\d+)\.(\d+)\.?([ab]?\d+)?'
     family_replacement: 'Bon Echo'
+
+  # Generic iOS App
+  - regex: '^((?!Mozilla\/5\.0)[^\s]+)[/\s](\d+)\.?(\d+)?\.?(\d+)?.*(?:\(iPhone|iPad|iPod|iOS)'
 
   # @note: iOS / OSX Applications
   - regex: '(iPod).+Version/(\d+)\.(\d+)\.(\d+)'
@@ -505,6 +528,17 @@ user_agent_parsers:
     family_replacement: 'Python Requests'
 
   - regex: '(Java)[/ ]{0,1}\d+\.(\d+)\.(\d+)[_-]*([a-zA-Z0-9]+)*'
+
+  #Generic Browser
+  - regex: '^Mozilla/\d\.\d'
+    family_replacement: 'Generic Browser'
+
+  # Generic Apps
+  - regex: '^([^/\d]+)/(\d+)\.?(\d+)?\.?(\d+)?\.?(\d+)?$'
+  - regex: '^([^\d]+)\s(\d+)\.?(\d+)?\.?(\d+)?\.?(\d+)?$'
+  - regex: '^([^\s/\d]+)(?:\s|/)(\d+)\.?(\d+)?\.?(\d+)?\.?(\d+)?$'
+  - regex: '^([^/\d]+)/(\d+)\.?(\d+)?\.?(\d+)?\.?(\d+)?\s?(?:\s|;|/|\()'
+  - regex: '^([^\d]+)$'
 
 os_parsers:
   ##########
@@ -4227,10 +4261,12 @@ device_parsers:
   #   cannot determine specific device type from ua string. (3g, 3gs, 4, etc)
   ##########
   # @note: on some ua the device can be identified e.g. iPhone5,1
-  - regex: '((?:iPhone|iPad|iPod)\d+,\d+)'
-    device_replacement: '$1'
+  # A.F. Changed regex to remove ,
+  #- regex: '((?:iPhone|iPad|iPod)\d+,\d+)'
+  - regex: '(iPhone|iPad|iPod)(\d+),\d+'
+    device_replacement: '$1$2'
     brand_replacement: 'Apple'
-    model_replacement: '$1'
+    model_replacement: '$2'
   # @note: iPad needs to be before iPhone
   - regex: '(iPad)(?:;| Simulator;)'
     device_replacement: '$1'
@@ -4251,6 +4287,18 @@ device_parsers:
     model_replacement: '$1$2,$3'
   # @note: iOS applications do not show device info
   - regex: 'CFNetwork/.* Darwin/\d'
+    device_replacement: 'iOS-Device'
+    brand_replacement: 'Apple'
+    model_replacement: 'iOS-Device'
+    # A.F @note: Apple-iPhone[4/5/6] show device
+  - regex: '(iPhone|iPad|iPod)'
+    regex_flag: 'i'
+    device_replacement: '$1'
+    brand_replacement: 'Apple'
+    model_replacement: 'iOS-Device'
+  # A.F @note: iOS applications do not show device info
+  #- regex: '(\(iOS|iOS/\d\.\d|iOS]|_ios_|-iOS-iOS;)'
+  - regex: '(iOS|_ios_)'
     device_replacement: 'iOS-Device'
     brand_replacement: 'Apple'
     model_replacement: 'iOS-Device'
@@ -4478,6 +4526,16 @@ device_parsers:
     device_replacement: 'Motorola $1'
     brand_replacement: 'Motorola'
     model_replacement: '$1'
+    # A.F. motorola/XT motorola XT1032
+  - regex: '[M|m]otorola[\s|/]([A-z][A-z][0-9]*)'
+    device_replacement: 'Motorola $1'
+    brand_replacement: 'Motorola'
+    model_replacement: '$1'
+    # A.F. MotoE2
+  - regex: '(MotoE2\(4G-LTE\))'
+    device_replacement: 'Motorola $1'
+    brand_replacement: 'Motorola'
+    model_replacement: '$1'
 
   ##########
   # nintendo
@@ -4527,6 +4585,37 @@ device_parsers:
     device_replacement: '$1'
     brand_replacement: 'Samsung'
     model_replacement: '$1'
+
+  # A.F. (GT-S7500 GINGERBREAD)
+  - regex: '\((GT\-[A-Z][0-9]+[A-Za-z]*)\sGINGERBREAD\)'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+
+  # A.F. ANDROID/GT-I9195
+  - regex: 'ANDROID/(GT\-[A-Z][0-9]+[A-Za-z]*)'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+
+  # A.F. ANDROID/SM-G800F
+  - regex: 'ANDROID/(SM\-[A-Z][0-9]+[A-Z]*)'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+
+  # A.F. Android/4.4.2/SM-G800F
+  - regex: 'Android/[\d\.]+/(SM\-[A-Z][0-9]+[A-Z]*)'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+
+  # A.F. ^SM-G800F;
+  - regex: '^(SM\-[A-Z][0-9]+[A-Z]*);'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+
   # Other Samsung
   #- regex: 'SAMSUNG(?:; |-)([A-Za-z0-9\-]+)'
   - regex: 'SAMSUNG(?:; |[ -/])([A-Za-z0-9\-]+)'
@@ -4578,6 +4667,13 @@ device_parsers:
     device_replacement: '$1 $2'
     brand_replacement: '$1'
     model_replacement: '$2'
+
+    # A.F. Sony Ericsson added for Android/5.0.2/C6833
+  - regex: '\(ANDROID/[0-9\.]+/(C[0-9]+)\)'
+    regex_flag: 'i'
+    device_replacement: 'Sony Ericsson $1'
+    brand_replacement: 'SonyEricsson'
+    model_replacement: '$1'
 
   #########
   # Puffin Browser Device detect

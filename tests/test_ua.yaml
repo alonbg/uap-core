@@ -1,5 +1,11 @@
 test_cases:
 
+  - user_agent_string: 'Dalvik/1.6.0 (Linux; U; Android 4.3; Q10 Build/10.3.1.222)'
+    family: 'Android Webkit'
+    major: '1'
+    minor: '6'
+    patch: '0'
+
   - user_agent_string: 'Mozilla/5.0 (Windows; U; en-US) AppleWebKit/531.9 (KHTML, like Gecko) AdobeAIR/2.5.1'
     family: 'AdobeAIR'
     major: '2'
@@ -37,58 +43,58 @@ test_cases:
     patch:
 
   - user_agent_string: 'Mozilla/5.0 (Linux; U; Android 2.2.2; en-gb; HTC Desire Build/FRG83G) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
-    family: 'Android'
-    major: '2'
-    minor: '2'
-    patch: '2'
+    family: 'Safari Webkit'
+    major: '4'
+    minor: '0'
+    patch:
 
   - user_agent_string: 'Mozilla/5.0 (Linux; U; Android 2.3.3; en-fr; HTC/WildfireS/1.33.163.2 Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
-    family: 'Android'
-    major: '2'
-    minor: '3'
-    patch: '3'
+    family: 'Safair Webkit'
+    major: '4'
+    minor: '0'
+    patch:
 
   - user_agent_string: 'Mozilla/5.0 (Linux; U; Android 2.3.4; en-us; Kindle Fire Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
-    family: 'Android'
-    major: '2'
-    minor: '3'
-    patch: '4'
+    family: 'Safari Webkit'
+    major: '4'
+    minor: '0'
+    patch:
 
   - user_agent_string: 'Mozilla/5.0 (Linux;U;Android 2.3.5;en-us;TECNO T3 Build/master) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
-    family: 'Android'
-    major: '2'
-    minor: '3'
-    patch: '5'
+    family: 'Safari Webkit'
+    major: '4'
+    minor: '0'
+    patch:
 
   - user_agent_string: 'Mozilla/5.0 (Linux; U; Android 3.0.1; en-us; GT-P7510 Build/HRI83) AppleWebKit/534.13 (KHTML, like Gecko) Version/4.0 Safari/534.13'
-    family: 'Android'
-    major: '3'
+    family: 'Safari Webkit'
+    major: '4'
     minor: '0'
-    patch: '1'
+    patch:
 
   - user_agent_string: 'Mozilla/5.0 (Linux; U; Android 4.0.3; en-us; KFTT Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30'
-    family: 'Android'
+    family: 'Safari Webkit'
     major: '4'
     minor: '0'
-    patch: '3'
+    patch:
 
   - user_agent_string: 'Mozilla/5.0 (Linux; U; Android 4.0.3; en-us; KFOT Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30'
-    family: 'Android'
+    family: 'Safari Webkit'
     major: '4'
     minor: '0'
-    patch: '3'
+    patch:
 
   - user_agent_string: 'Mozilla/5.0 (Linux; U; Android 4.0.3; en-us; Amaze_4G Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'
-    family: 'Android'
+    family: 'Safari Webkit'
     major: '4'
     minor: '0'
-    patch: '3'
+    patch:
 
   - user_agent_string: 'Mozilla/5.0 (Linux; U; Android 4.0.4; en-us; PJ83100/2.20.502.7 Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.0'
-    family: 'Android'
+    family: 'Safari Webkit'
     major: '4'
     minor: '0'
-    patch: '4'
+    patch:
 
   - user_agent_string: 'Mozilla/5.0 (Windows; U; Windows NT 6.1; zh_CN) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/7.0 baidubrowser/1.x Safari/534.7'
     family: 'Baidu Browser'
@@ -6100,10 +6106,10 @@ test_cases:
     patch:
 
   - user_agent_string: 'Mozilla/5.0 (Linux; U; Android 4.2.1; en-gb; CUBOT ONE Build/JOP40D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'
-    family: 'Android'
+    family: 'Safari Webkit'
     major: '4'
-    minor: '2'
-    patch: '1'
+    minor: '0'
+    patch:
 
   - user_agent_string: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9) AppleWebKit/537.71 (KHTML, like Gecko) Version/7.0 Safari/537.71 (Rival IQ, rivaliq.com)'
     family: 'Rival IQ'
