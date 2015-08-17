@@ -1,5 +1,293 @@
 test_cases:
 
+  - user_agent_string: 'AppNumber=31 AppVersion=6.5.0b APIVersion=2.0.0 BRAND=samsung MODEL=GT-I9195 MFR=samsung PROD=serranoltexx DEV=serranolte ADID=ec43beac-dd00-4971-8820-abba67de72bd ADOPTOUT=0 advertId=ec43beac-dd00-4971-8820-abba67de72bd UID=389f4309583ae9bb deviceId=389f4309583ae9bb FIRMWARE=4.2.2_I9195XXUBMJ7 iid=dba16c10-6518-4e80-936a-bf67475deb6f TZ=+02:00 LANG=de_AT FORM=p 6IMSI=232012 COUNTRY=at NETWORK=LTE MAPS=1'
+    family: 'Samsung GT-I9195'
+    brand: 'Samsung'
+    model: 'GT-I9195'
+  - user_agent_string: 'Android - Plus500 client Version Name: 7.02 Version Code: 34740 Device: D5503 Manufacturer: Sony Model: D5503 SDK version Int: 19'
+    family: 'D5503'
+    brand: 'Sony'
+    model: 'D5503'
+  - user_agent_string: 'rad.io/2.14.7 (Android 4.3) Sony/C6603'
+    family: 'C6603'
+    brand: 'Sony'
+    model: 'C6603'
+  - user_agent_string: 'Android/1.0 (bravo FRG83G)'
+    family: 'HTC bravo'
+    brand: 'HTC'
+    model: 'bravo'
+  - user_agent_string: 'TuneIn Radio/13.4.1 (Android 18; Galaxy Nexus; Java)'
+    family: 'Samsung Galaxy Nexus'
+    brand: 'Samsung'
+    model: 'Galaxy Nexus'
+  - user_agent_string: 'Instagram 6.22.0 Android (19/4.4.4; 320dpi; 720x1184; motorola; XT1052; ghost; qcom; de_DE)'
+    family: 'Motorola XT1052'
+    brand: 'Motorola'
+    model: 'XT1052'
+  - user_agent_string: 'LG-E440/E44010a-EUR-XX Player/LG Player 1.0 for Android(stagefright alternative)'
+    family: 'LG E440'
+    brand: 'LG'
+    model: 'E440'
+  - user_agent_string: 'Android/5.1 LGE/Nexus_5 normal/xxhdpi de/de xkcd/23'
+    family: 'LG Nexus_5'
+    brand: 'LG'
+    model: 'Nexus_5'
+  - user_agent_string: 'Instagram 6.17.1 Android (17/4.2.2; 240dpi; 480x800; HUAWEI/Huawei; HUAWEI Y330-U01; hwY330-U01; mt6572; de_DE)'
+    family: 'Huawei Y330-U01'
+    brand: 'Huawei'
+    model: 'Y330-U01'
+  - user_agent_string: 'VKAndroidApp/3.12-763 (Android 4.3; SDK 18; armeabi-v7a; Sony LT30p; de)'
+    family: 'LT30p'
+    brand: 'Sony'
+    model: 'LT30p'
+  - user_agent_string: 'Android - Plus500 client Version Name: 7.02 Version Code: 34740 Device: zeroflte Manufacturer: samsung Model: SM-G920F SDK version Int: 21'
+    family: 'Samsung SM-G920F'
+    brand: 'Samsung'
+    model: 'SM-G920F'
+  - user_agent_string: 'Instagram 6.22.0 Android (19/4.4.2; 240dpi; 480x800; alps/CUBOT; GT72+; CUBOT GT72+; mt6572; de_DE)'
+    family: 'GT72+'
+    brand: 'Cubot'
+    model: 'GT72+'
+  - user_agent_string: 'Android/1.0 (espresso10rf IMM76D)'
+    family: 'Samsung espresso10rf'
+    brand: 'Samsung'
+    model: 'espresso10rf'
+  - user_agent_string: 'Android-Checkin/2.0 (kylevess JZO54K); gzip'
+    family: 'Samsung kylevess'
+    brand: 'Samsung'
+    model: 'kylevess'
+  - user_agent_string: 'Android-Checkin/2.0 (cs02 JDQ39); gzip'
+    family: 'Samsung cs02'
+    brand: 'Samsung'
+    model: 'cs02'
+  - user_agent_string: '9GAG/1509 (TCT ALCATEL ONE TOUCH 7041D;Android 4.2.2)'
+    family: 'Alcatel One Touch 7041D'
+    brand: 'Alcatel'
+    model: 'One Touch 7041D'
+
+  - user_agent_string: 'aceApps (Android OS 4.2.2; TCT ONE TOUCH 4033D; linedeco; 2.5.0)'
+    family: 'Alcatel One Touch 4033D'
+    brand: 'Alcatel'
+    model: 'One Touch 4033D'
+
+  - user_agent_string: 'Android/1.0 (pyramid IML74K)'
+    family: 'HTC pyramid'
+    brand: 'HTC'
+    model: 'pyramid'
+
+  - user_agent_string: 'SK Rapid Wien App 2.2.6 rv:26 (SM-G900F;Android API Lvl 21;de_AT)'
+    family: 'Samsung SM-G900F'
+    brand: 'Samsung'
+    model: 'SM-G900F'
+
+  - user_agent_string: 'AVG; Android 4.4.4; titan_umtsds; pid/100 vc/301 ver/4.3.1.1.213361'
+    family: 'Motorola titan_umtsds'
+    brand: 'Motorola'
+    model: 'titan_umtsds'
+
+
+  - user_agent_string: 'Android/1.0 (golfu IML74K)'
+    family: 'HTC golfu'
+    brand: 'HTC'
+    model: 'golfu'
+
+  - user_agent_string: 'Android-Checkin/2.0 (GT-I9000 FROYO); gzip'
+    family: 'Samsung GT-I9000'
+    brand: 'Samsung'
+    model: 'GT-I9000'
+
+  - user_agent_string: 'Dalvik/1.6.0 (Linux; U; Android 4.1.1; MI 2A MIUI/4.12.5)'
+    family: 'XiaoMi MI 2A'
+    brand: 'XiaoMi'
+    model: 'MI 2A'
+
+  - user_agent_string: 'Dalvik/1.6.0 (Linux; U; Android 4.3; HM 1SW MIUI/JHCCNBF97.0)'
+    family: 'XiaoMi HM 1SW'
+    brand: 'XiaoMi'
+    model: 'HM 1SW'
+
+  - user_agent_string: 'Dalvik/1.6.0 (Linux; U; Android 4.4.4; HM NOTE 1S MIUI/5.5.1)'
+    family: 'XiaoMi HM NOTE 1S'
+    brand: 'XiaoMi'
+    model: 'HM NOTE 1S'
+
+  - user_agent_string: 'XT1032; 4.4.4; KXB21.14-L1.40; de-de'
+    family: 'Motorola XT1032'
+    brand: 'Motorola'
+    model: 'XT1032'
+
+  - user_agent_string: 'ASAP54;02.01.0000.0000;Android 4.4.4;XT1032;'
+    family: 'Motorola XT1032'
+    brand: 'Motorola'
+    model: 'XT1032'
+
+  - user_agent_string: 'unused/0 (coriplus IMM76D); gzip'
+    family: 'Samsung coriplus'
+    brand: 'Samsung'
+    model: 'coriplus'
+
+  - user_agent_string: 'unused/0 (DIABLOX JDQ39); gzip'
+    family: 'Alcatel DIABLOX'
+    brand: 'Alcatel'
+    model: 'DIABLOX'
+
+  - user_agent_string: 'GoogleMobile/1.0 (YARISXL JDQ39); gzip'
+    family: 'Alcatel YARISXL'
+    brand: 'Alcatel'
+    model: 'YARISXL'
+
+  - user_agent_string: 'GoogleMobile/1.0 (crespo JZO54K); gzip'
+    family: 'Samsung crespo'
+    brand: 'Samsung'
+    model: 'crespo'
+
+  - user_agent_string: 'GoogleMobile/1.0 (a50ne JDQ39); gzip'
+    family: 'Archos a50ne'
+    brand: 'Archos'
+    model: 'a50ne'
+
+  - user_agent_string: 'unused/0 (protou JRO03C); gzip'
+    family: 'HTC protou'
+    brand: 'HTC'
+    model: 'protou'
+
+  - user_agent_string: 'unused/0 (villec2 JRO03C); gzip'
+    family: 'HTC villec2'
+    brand: 'HTC'
+    model: 'villec2'
+
+  - user_agent_string: 'unused/0 (z4u JZO54K); gzip'
+    family: 'HTC z4u'
+    brand: 'HTC'
+    model: 'z4u'
+
+  - user_agent_string: 'unused/0 (kyleprods JDQ39); gzip'
+    family: 'Samsung kyleprods'
+    brand: 'Samsung'
+    model: 'kyleprods'
+
+  - user_agent_string: 'unused/0 (skomer JZO54K); gzip'
+    family: 'Samsung skomer'
+    brand: 'Samsung'
+    model: 'skomer'
+
+  - user_agent_string: 'unused/0 (maguro JOP40D); gzip'
+    family: 'Samsung maguro'
+    brand: 'Samsung'
+    model: 'maguro'
+
+  - user_agent_string: 'unused/0 (goldenvess3g JDQ39); gzip'
+    family: 'Samsung goldenvess3g'
+    brand: 'Samsung'
+    model: 'goldenvess3g'
+
+  - user_agent_string: 'unused/0 (j13g KTU84P); gzip'
+    family: 'Samsung j13g'
+    brand: 'Samsung'
+    model: 'j13g'
+
+  - user_agent_string: 'GoogleMobile/1.0 (m0 JSS15J); gzip'
+    family: 'Samsung m0'
+    brand: 'Samsung'
+    model: 'm0'
+
+  - user_agent_string: 'unused/0 (k2ul JDQ39); gzip'
+    family: 'HTC k2ul'
+    brand: 'HTC'
+    model: 'k2ul'
+
+
+  - user_agent_string: 'unused/0 (t03g KOT49H); gzip'
+    family: 'Samsung t03g'
+    brand: 'Samsung'
+    model: 't03g'
+
+  - user_agent_string: 'unused/0 (hammerhead LMY47I); gzip'
+    family: 'LG hammerhead'
+    brand: 'LG'
+    model: 'hammerhead'
+
+  - user_agent_string: 'unused/0 (g2 LRX22G); gzip'
+    family: 'Motorola Nexus 6'
+    brand: 'Motorola'
+    model: 'Nexus 6'
+
+  - user_agent_string: 'unused/0 (degaslte KOT49H); gzip'
+    family: 'Samsung degaslte'
+    brand: 'Samsung'
+    model: 'degaslte'
+
+  - user_agent_string: 'unused/0 (kminilte KOT49H); gzip'
+    family: 'Samsung kminilte'
+    brand: 'Samsung'
+    model: 'kminilte'
+
+  - user_agent_string: 'unused/0 (trlte LRX22C); gzip'
+    family: 'Samsung trlte'
+    brand: 'Samsung'
+    model: 'trlte'
+
+  - user_agent_string: 'unused/0 (jflte LRX22C); gzip'
+    family: 'Samsung jflte'
+    brand: 'Samsung'
+    model: 'jflte'
+
+  - user_agent_string: 'Android-Checkin/2.0 (goldenvess3g JDQ39); gzip'
+    family: 'Samsung goldenvess3g'
+    brand: 'Samsung'
+    model: 'goldenvess3g'
+
+  - user_agent_string: 'unused/0 (ks01lte LRX21V); gzip'
+    family: 'Samsung ks01lte'
+    brand: 'Samsung'
+    model: 'ks01lte'
+
+  - user_agent_string: 'C6903; 4.3; 14.2.A.0.290; de_AT SonyEricsson'
+    family: 'C6903'
+    brand: 'Sony'
+    model: 'C6903'
+
+  - user_agent_string: 'unused/0 (thea LXB22.46-28); gzip'
+    family: 'Motorola thea'
+    brand: 'Motorola'
+    model: 'thea'
+
+  - user_agent_string: 'AVG; Android 4.2.1; wiko; pid/100 vc/301 ver/4.3.1.1.213361'
+    family: 'Wiko wiko'
+    brand: 'Wiko'
+    model: 'wiko'
+
+  - user_agent_string: 'GoogleMobile/1.0 (wiko KOT49H); gzip'
+    family: 'Wiko wiko'
+    brand: 'Wiko'
+    model: 'wiko'
+
+  - user_agent_string: 'unused/0 (htc_v01_u KOT49H); gzip'
+    family: 'HTC v01_u'
+    brand: 'HTC'
+    model: 'v01_u'
+
+  - user_agent_string: 'unused/0 (D5503 14.2.A.1.114); gzip'
+    family: 'D5503'
+    brand: 'Sony'
+    model: 'D5503'
+
+
+  - user_agent_string: 'C1905'
+    family: 'C1905'
+    brand: 'Sony'
+    model: 'C1905'
+
+  - user_agent_string: 'GoogleMobile/1.0 (C6603 10.5.1.A.0.292); gzip'
+    family: 'C6603'
+    brand: 'Sony'
+    model: 'C6603'
+
+  - user_agent_string: 'GoogleMobile/1.0 (SGP521 17.1.A.2.36); gzip'
+    family: 'SGP521'
+    brand: 'Sony'
+    model: 'SGP521'
+    
   - user_agent_string: 'iOS/8.3 (12F70) dataaccessd/1.0'
     family: 'iOS-Device'
     brand: 'Apple'
@@ -58306,9 +58594,9 @@ test_cases:
     model: '4'
 
   - user_agent_string: 'Android GT-I9505/4.2.2 (I9505XXUAME2)/357441051815392/samsung/5.4.1/klicktel//1080/1920/7390105//11528/0.0/0.0/'
-    family: 'Samsung 5'
+    family: 'Samsung GT-I9505'
     brand: 'Samsung'
-    model: '5'
+    model: 'GT-I9505'
 
   - user_agent_string: 'Samsung/910XXIG2/sw_platform=S60;sw_platform_version=5.0;java_build_version=1.3.4 Profile/MIDP-2.1 Configuration/CLDC-1.1 UNTRUSTED/1.0'
     family: 'Samsung 910XXIG2'
@@ -58406,14 +58694,14 @@ test_cases:
     model: 'blog-news'
 
   - user_agent_string: 'Orca-Android/2.2.2-release OS/2.3.6 Model/GT-I9001 VersionCode/88371 Product/Messenger Carrier/o2_-_de Manufacturer/samsung Brand/samsung'
-    family: 'Samsung Brand'
+    family: 'Samsung GT-I9001'
     brand: 'Samsung'
-    model: 'Brand'
+    model: 'GT-I9001'
 
   - user_agent_string: 'Mozilla/5.0 (GT-S5363; Android 2.3.6; samsung; Build/GINGERBREAD.XXLK1; samsung; REL; he=e789b305; hs=cef45f5b) AppleWebKit/533.1(KHTML, like Gecko) Mobile GGEE/13.09.00(2; 270; 270; 1611)'
-    family: 'Samsung Build'
+    family: 'Samsung GT-S5363'
     brand: 'Samsung'
-    model: 'Build'
+    model: 'GT-S5363'
 
   - user_agent_string: 'MQQBrowser/Mini2.2 (SAMSUNG-C3010/SDDJE1)'
     family: 'Samsung C3010'
@@ -58506,9 +58794,9 @@ test_cases:
     model: 'Captivate'
 
   - user_agent_string: 'Tagged/3.9.9/an GT-S5301(samsung/coriplusxx/coriplus:4.0.4/IMM76D/S5301XXAMC1:user/release-keys)'
-    family: 'Samsung coriplusxx'
+    family: 'Samsung GT-S5301'
     brand: 'Samsung'
-    model: 'coriplusxx'
+    model: 'GT-S5301'
 
   - user_agent_string: 'YahooJMobileApp/1.1 (Android yjwidget; 3.0.2.2) (samsung; d2dcm; samsung; SC-06D; 4.1.2/JZO54K)'
     family: 'Samsung d2dcm'
@@ -58546,9 +58834,9 @@ test_cases:
     model: 'de'
 
   - user_agent_string: 'Rdio.Net; Android/2.2.8; brand:oi; Android/4.1.2; DM=samsung; DN=GT-N7000; DC=samsung; DF=samsung/GT-N7000/GT-N7000:4.1.2/JZO54K/N7000UBLSG:user/release-keys; DH=smdk4210'
-    family: 'Samsung DN'
+    family: 'Samsung GT-N7000'
     brand: 'Samsung'
-    model: 'DN'
+    model: 'GT-N7000'
 
   - user_agent_string: 'Samsung DROID Charge Android_SDK'
     family: 'Samsung DROID'
@@ -58706,19 +58994,19 @@ test_cases:
     model: 'EPIC'
 
   - user_agent_string: '(samsung/espresso10rf/GT-P5100)API 15. Language Deutsch'
-    family: 'Samsung espresso10rf'
+    family: 'Samsung GT-P5100'
     brand: 'Samsung'
-    model: 'espresso10rf'
+    model: 'GT-P5100'
 
   - user_agent_string: 'Groupon/2.10.3166 (Android 4.1.2; Samsung Espresso10rf / Samsung GT-P5100; O2 - de)[preload=true;locale=de_DE;clientidbase=android-samsung]'
-    family: 'Samsung Espresso10rf'
+    family: 'Samsung GT-P5100'
     brand: 'Samsung'
-    model: 'Espresso10rf'
+    model: 'GT-P5100'
 
   - user_agent_string: 'Tagged/4.0.3/an GT-P5100(samsung/espresso10rfbu/espresso10rf:4.0.3/IML74K/P5100BUALD5:user/release-keys)'
-    family: 'Samsung espresso10rfbu'
+    family: 'Samsung GT-P5100'
     brand: 'Samsung'
-    model: 'espresso10rfbu'
+    model: 'GT-P5100'
 
   - user_agent_string: 'MobilePlugin (Linux; U; Android 4.1.2; samsung espresso10rfxx; JZO54K.P5100XXDMD1)'
     family: 'Samsung espresso10rfxx'
@@ -58726,19 +59014,19 @@ test_cases:
     model: 'espresso10rfxx'
 
   - user_agent_string: '(samsung/espressorf/GT-P3100)API 16. Language Deutsch'
-    family: 'Samsung espressorf'
+    family: 'Samsung GT-P3100'
     brand: 'Samsung'
-    model: 'espressorf'
+    model: 'GT-P3100'
 
   - user_agent_string: 'Tagged/3.8.4/an GT-P3100(samsung/espressorfxx/espressorf:4.1.1/JRO03C/P3100XXCLJ3:user/release-keys)'
-    family: 'Samsung espressorfxx'
+    family: 'Samsung GT-P3100'
     brand: 'Samsung'
-    model: 'espressorfxx'
+    model: 'GT-P3100'
 
   - user_agent_string: 'stamhub 13082903.1.00.03/SM-N9005; 2013082903; 13082903.1.00.03; com.samsung.everglades.video; hlte; samsung/hltexx/hlte:4.3/JSS15J/N9005XXUBMJ1:user/release-keys'
-    family: 'Samsung everglades'
+    family: 'Samsung SM-N9005'
     brand: 'Samsung'
-    model: 'everglades'
+    model: 'SM-N9005'
 
   - user_agent_string: 'Samsung Exhibit 4G Android_SDK'
     family: 'Samsung Exhibit'
@@ -58746,14 +59034,14 @@ test_cases:
     model: 'Exhibit'
 
   - user_agent_string: '(samsung/expresslte/GT-I8730)API 16. Language Deutsch'
-    family: 'Samsung expresslte'
+    family: 'Samsung GT-I8730'
     brand: 'Samsung'
-    model: 'expresslte'
+    model: 'GT-I8730'
 
   - user_agent_string: 'hi5/3.9.7/an GT-I8730(samsung/expressltexx/expresslte:4.1.2/JZO54K/I8730XWAMG1:user/release-keys)'
-    family: 'Samsung expressltexx'
+    family: 'Samsung GT-I8730'
     brand: 'Samsung'
-    model: 'expressltexx'
+    model: 'GT-I8730'
 
   - user_agent_string: 'Samsung Fascinate Android_SDK'
     family: 'Samsung Fascinate'
@@ -58781,14 +59069,14 @@ test_cases:
     model: 'Gem'
 
   - user_agent_string: '(samsung/golden/GT-I8190)API 16. Language Deutsch'
-    family: 'Samsung golden'
+    family: 'Samsung GT-I8190'
     brand: 'Samsung'
-    model: 'golden'
+    model: 'GT-I8190'
 
   - user_agent_string: 'Groupon/2.0.2414 (Android 4.1.1; Samsung Golden / Samsung GT-I8190; )[preload=true;locale=de_DE;clientidbase=android-samsung]'
-    family: 'Samsung Golden'
+    family: 'Samsung GT-I8190'
     brand: 'Samsung'
-    model: 'Golden'
+    model: 'GT-I8190'
 
   - user_agent_string: 'MobilePlugin (Linux; U; Android 4.1.2; samsung goldennfcxx; JZO54K.I8190NXXAMG1)'
     family: 'Samsung goldennfcxx'
@@ -58801,9 +59089,9 @@ test_cases:
     model: 'goldenxx'
 
   - user_agent_string: 'Instagram 4.2.2 Android (18/4.3; 320dpi; 720x1184; samsung/google; Galaxy Nexus; maguro; tuna; de_DE)'
-    family: 'Samsung google'
+    family: 'Samsung maguro'
     brand: 'Samsung'
-    model: 'google'
+    model: 'maguro'
 
   - user_agent_string: 'Instagram 5.1.0 Android (17/4.2.2; 240dpi; 480x854; GT-1317/samsung; GT-1317; GT-1317; mt6572; de_DE)'
     family: 'Samsung GT-1317'
@@ -61686,9 +61974,9 @@ test_cases:
     model: 'hdblog'
 
   - user_agent_string: '(samsung/hlte/SM-N9005)API 18. Language Deutsch'
-    family: 'Samsung hlte'
+    family: 'Samsung SM-N9005'
     brand: 'Samsung'
-    model: 'hlte'
+    model: 'SM-N9005'
 
   - user_agent_string: 'TeleTrader/2.1/Android/samsung-hlte-hltexx-SM-N9005/4.3'
     family: 'Samsung hlte-hltexx-SM-N9005'
@@ -61756,14 +62044,14 @@ test_cases:
     model: 'JAVA'
 
   - user_agent_string: '(samsung/jflte/GT-I9505)API 17. Language Deutsch'
-    family: 'Samsung jflte'
+    family: 'Samsung GT-I9505'
     brand: 'Samsung'
-    model: 'jflte'
+    model: 'GT-I9505'
 
   - user_agent_string: 'Groupon/2.10.3156 (Android 4.2.2; Samsung Jflte / Samsung GT-I9505; Telekom.de)[preload=true;locale=de_DE;clientidbase=android-samsung]'
-    family: 'Samsung Jflte'
+    family: 'Samsung GT-I9505'
     brand: 'Samsung'
-    model: 'Jflte'
+    model: 'GT-I9505'
 
   - user_agent_string: 'MobilePlugin (Linux; U; Android 4.4.2; samsung jfltexx; KOT49H.I9505XXUFNA5)'
     family: 'Samsung jfltexx'
@@ -61771,19 +62059,19 @@ test_cases:
     model: 'jfltexx'
 
   - user_agent_string: 'Groupon/2.3.2787 (Android 4.2.2; Samsung Ks01lte / Samsung GT-I9506; O2 - de)[preload=true;locale=de_DE;clientidbase=android-samsung]'
-    family: 'Samsung Ks01lte'
+    family: 'Samsung GT-I9506'
     brand: 'Samsung'
-    model: 'Ks01lte'
+    model: 'GT-I9506'
 
   - user_agent_string: '(samsung/kyleopen/GT-S7562)API 15. Language Deutsch'
-    family: 'Samsung kyleopen'
+    family: 'Samsung GT-S7562'
     brand: 'Samsung'
-    model: 'kyleopen'
+    model: 'GT-S7562'
 
   - user_agent_string: '(samsung/lt013g/SM-T311)API 17. Language Deutsch'
-    family: 'Samsung lt013g'
+    family: 'Samsung SM-T311'
     brand: 'Samsung'
-    model: 'lt013g'
+    model: 'SM-T311'
 
   - user_agent_string: 'Tagged/4.0.4/an SM-T311(samsung/lt013gxx/lt013g:4.2.2/JDQ39/T311XXUAMG1:user/release-keys)'
     family: 'Samsung lt013gxx'
@@ -61791,24 +62079,24 @@ test_cases:
     model: 'lt013gxx'
 
   - user_agent_string: 'stamhub 1.0.94/SM-T310; 10094; 1.0.94; com.sec.yosemite.tab; lt01wifi; samsung/lt01wifixx/lt01wifi:4.2.2/JDQ39/T310XWUAMG3:user/release-keys'
-    family: 'Samsung lt01wifixx'
+    family: 'Samsung SM-T310'
     brand: 'Samsung'
-    model: 'lt01wifixx'
+    model: 'SM-T310'
 
   - user_agent_string: '(samsung/lt023g/SM-T211)API 16. Language Deutsch'
-    family: 'Samsung lt023g'
+    family: 'Samsung SM-T211'
     brand: 'Samsung'
-    model: 'lt023g'
+    model: 'SM-T211'
 
   - user_agent_string: '(samsung/lt03lte/SM-P605)API 18. Language Deutsch'
-    family: 'Samsung lt03lte'
+    family: 'Samsung SM-P605'
     brand: 'Samsung'
-    model: 'lt03lte'
+    model: 'SM-P605'
 
   - user_agent_string: 'Groupon/2.10.3166 (Android 4.3; Samsung Lt03lte / Samsung SM-P605; )[preload=false;locale=de_DE;clientidbase=android-samsung]'
-    family: 'Samsung Lt03lte'
+    family: 'Samsung SM-P605'
     brand: 'Samsung'
-    model: 'Lt03lte'
+    model: 'SM-P605'
 
   - user_agent_string: 'Mozilla/5.0 (Java; U; Pt-br; samsung m2710) UCBrowser8.2.1.144/69/352/UCWEB Mobile'
     family: 'Samsung m2710'
@@ -61821,14 +62109,14 @@ test_cases:
     model: 'M2710'
 
   - user_agent_string: '(samsung/m3/GT-I9305)API 16. Language Deutsch'
-    family: 'Samsung m3'
+    family: 'Samsung GT-I9305'
     brand: 'Samsung'
-    model: 'm3'
+    model: 'GT-I9305'
 
   - user_agent_string: 'Groupon/2.10.3166 (Android 4.1.2; Samsung M3 / Samsung GT-I9305; )[preload=false;locale=de_DE;clientidbase=android-samsung]'
-    family: 'Samsung M3'
+    family: 'Samsung GT-I9305'
     brand: 'Samsung'
-    model: 'M3'
+    model: 'GT-I9305'
 
   - user_agent_string: 'Mozilla/5.0 (Java; U; Pt-br; samsung m3200) AppleWebKit/530.13 (KHTML, like Gecko) UCBrowser/8.6.0.199/69/352/UCWEB Mobile,SAMSUNG-M3200/M3200JCHJ1 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.102 (GUI) MMP/2.0 Untrusted/1.0'
     family: 'Samsung m3200'
@@ -61866,9 +62154,9 @@ test_cases:
     model: 'M3510MIDP'
 
   - user_agent_string: 'Tagged/3.8.8/an GT-I9305(samsung/m3xx/m3:4.1.2/JZO54K/I9305XXBLL5:user/release-keys)'
-    family: 'Samsung m3xx'
+    family: 'Samsung GT-I9305'
     brand: 'Samsung'
-    model: 'm3xx'
+    model: 'GT-I9305'
 
   - user_agent_string: 'SAMSUNG-M7500'
     family: 'Samsung M7500'
@@ -61941,14 +62229,14 @@ test_cases:
     model: 'mobiles'
 
   - user_agent_string: 'Android - Plus500 client Version Name: 4.8 Version Code: 25454 Device: GT-S5830i Manufacturer: samsung Model: GT-S5830i SDK version Int: 10'
-    family: 'Samsung Model'
+    family: 'Samsung GT-S5830i'
     brand: 'Samsung'
-    model: 'Model'
+    model: 'GT-S5830i'
 
   - user_agent_string: 'BRAND: samsung; MODEL: GT-N7100; VERSION.RELEASE: 4.3; VERSION.INCREMENTAL: N7100XXUEMK9; VERSION.SDK: 18; FINGERPRINT: samsung/t03gxx/t03g:4.3/JSS15J/N7100XXUEMK9:user/release-keys; com.socialblade.android.youtubesubscriberswidget/0.0.7 (Linu'
-    family: 'Samsung MODEL'
+    family: 'Samsung GT-N7100'
     brand: 'Samsung'
-    model: 'MODEL'
+    model: 'GT-N7100'
 
   - user_agent_string: 'Samsung Moment Android_SDK'
     family: 'Samsung Moment'
@@ -61961,9 +62249,9 @@ test_cases:
     model: 'N9000'
 
   - user_agent_string: 'Mozilla/5.0 (GT-I9300 samsung; NetatmoApp/v1.1.4.2 Android 4.3) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3'
-    family: 'Samsung NetatmoApp'
+    family: 'Samsung GT-I9300'
     brand: 'Samsung'
-    model: 'NetatmoApp'
+    model: 'GT-I9300'
 
   - user_agent_string: 'NetFront/3.5.1(BREW 3.1.5; U; en-us; SAMSUNG; NetFront/3.1.5/WAP) PLS-M350 MMP/2.0 Profile/MIDP-2.1 Configuration/CLDC-1.1'
     family: 'Samsung NetFront'
@@ -61976,9 +62264,9 @@ test_cases:
     model: 'Network'
 
   - user_agent_string: 'Groupon/2.10.3166 (Android 4.1.2; Samsung Nevisp / Samsung GT-S6810P; )[preload=true;locale=de_DE;clientidbase=android-samsung]'
-    family: 'Samsung Nevisp'
+    family: 'Samsung GT-S6810P'
     brand: 'Samsung'
-    model: 'Nevisp'
+    model: 'GT-S6810P'
 
   - user_agent_string: 'Mozilla/5.0 (Linux; U; Android 2.2.1; en-us; NEXUS S Build/VZW) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 480X854 samsung NEXUS S'
     family: 'Samsung NEXUS'
@@ -62006,19 +62294,19 @@ test_cases:
     model: 'OMNIA7-H3'
 
   - user_agent_string: 'hi5/4.0.3/an GT-N8020(samsung/p4noteltexx/p4notelte:4.1.2/JZO54K/N8020XXBMF2:user/release-keys)'
-    family: 'Samsung p4noteltexx'
+    family: 'Samsung GT-N8020'
     brand: 'Samsung'
-    model: 'p4noteltexx'
+    model: 'GT-N8020'
 
   - user_agent_string: '(samsung/p4noterf/GT-N8000)API 16. Language Deutsch'
-    family: 'Samsung p4noterf'
+    family: 'Samsung GT-N8000'
     brand: 'Samsung'
-    model: 'p4noterf'
+    model: 'GT-N8000'
 
   - user_agent_string: 'Groupon/3.0.3228 (Android 4.1.2; Samsung P4noterf / Samsung GT-N8000; O2 - de)[preload=false;locale=de_DE;clientidbase=android-samsung]'
-    family: 'Samsung P4noterf'
+    family: 'Samsung GT-N8000'
     brand: 'Samsung'
-    model: 'P4noterf'
+    model: 'GT-N8000'
 
   - user_agent_string: 'samsung/p4noterfxx/p4noterf:4.1.2/JZO54K/N8000XXCMJ3:user/com.comedyclub/1.9.2.92'
     family: 'Samsung p4noterfxx'
@@ -62051,19 +62339,19 @@ test_cases:
     model: 'RL-A760'
 
   - user_agent_string: '(samsung/roy/GT-S6312)API 16. Language Deutsch'
-    family: 'Samsung roy'
+    family: 'Samsung GT-S6312'
     brand: 'Samsung'
-    model: 'roy'
+    model: 'GT-S6312'
 
   - user_agent_string: '(samsung/royssnfc/GT-S6310N)API 16. Language Deutsch'
-    family: 'Samsung royssnfc'
+    family: 'Samsung GT-S6310N'
     brand: 'Samsung'
-    model: 'royssnfc'
+    model: 'GT-S6310N'
 
   - user_agent_string: '(samsung/s2vep/GT-I9105P)API 17. Language Deutsch'
-    family: 'Samsung s2vep'
+    family: 'Samsung GT-I9105P'
     brand: 'Samsung'
-    model: 's2vep'
+    model: 'GT-I9105P'
 
   - user_agent_string: 'SAMSUNG-S3030/1.0 Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0'
     family: 'Samsung S3030'
@@ -62336,9 +62624,9 @@ test_cases:
     model: 'SAMSUNG-SMART-TV'
 
   - user_agent_string: '(samsung/santos103g/GT-P5200)API 17. Language Deutsch'
-    family: 'Samsung santos103g'
+    family: 'Samsung GT-P5200'
     brand: 'Samsung'
-    model: 'santos103g'
+    model: 'GT-P5200'
 
   - user_agent_string: 'MobilePlugin (Linux; U; Android 4.2.2; samsung santos103gxx; JDQ39.P5200XXUAMI8)'
     family: 'Samsung santos103gxx'
@@ -62346,9 +62634,9 @@ test_cases:
     model: 'santos103gxx'
 
   - user_agent_string: '(samsung/santos10wifi/GT-P5210)API 17. Language Deutsch'
-    family: 'Samsung santos10wifi'
+    family: 'Samsung GT-P5210'
     brand: 'Samsung'
-    model: 'santos10wifi'
+    model: 'GT-P5210'
 
   - user_agent_string: 'YahooJMobileApp/1.1 (Android yjtop; 2.0.1) (samsung; SC-02C; samsung; SC-02C; 2.3.3/GINGERBREAD)'
     family: 'Samsung SC-02C'
@@ -62666,9 +62954,9 @@ test_cases:
     model: 'Self-Update'
 
   - user_agent_string: 'Groupon/3.0.3228 (Android 4.2.2; Samsung Serranolte / Samsung GT-I9195; )[preload=false;locale=de_DE;clientidbase=android-samsung]'
-    family: 'Samsung Serranolte'
+    family: 'Samsung GT-I9195'
     brand: 'Samsung'
-    model: 'Serranolte'
+    model: 'GT-I9195'
 
   - user_agent_string: 'MobilePlugin (Linux; U; Android 4.2.2; samsung serranoltexx; JDQ39.I9195XXUBMJ7)'
     family: 'Samsung serranoltexx'
@@ -67556,14 +67844,14 @@ test_cases:
     model: 'Stratosphere'
 
   - user_agent_string: 'Groupon/2.6.2977 (Android 4.1.2; Samsung T03g / Samsung GT-N7100; O2 - de)[preload=false;locale=de_DE;clientidbase=android-samsung]'
-    family: 'Samsung T03g'
+    family: 'Samsung GT-N7100'
     brand: 'Samsung'
-    model: 'T03g'
+    model: 'GT-N7100'
 
   - user_agent_string: 'Tagged/3.9.1/an GT-N7100(samsung/t03gxx/t03g:4.1.2/JZO54K/N7100XXDMB2:user/release-keys)'
-    family: 'Samsung t03gxx'
+    family: 'Samsung GT-N7100'
     brand: 'Samsung'
-    model: 't03gxx'
+    model: 'GT-N7100'
 
   - user_agent_string: 'WindowsPhoneMMS/1.0 WindowsPhoneOS/7.0-6402 SAMSUNG-Taylor'
     family: 'Samsung Taylor'
@@ -67591,9 +67879,9 @@ test_cases:
     model: 'Verizon'
 
   - user_agent_string: 'stamhub 1.0.36/GT-P5100; 36; 1.0.36; com.samsung.videohub; espresso10rf; samsung/espresso10rfxx/espresso10rf:4.0.4/IMM76D/P5100XWBLE4:user/release-keys'
-    family: 'Samsung videohub'
+    family: 'Samsung GT-P5100'
     brand: 'Samsung'
-    model: 'videohub'
+    model: 'GT-P5100'
 
   - user_agent_string: 'Mozilla/5.0 (Java; U; en-us; samsung w259) AppleWebKit/530.13 (KHTML, like Gecko) UCBrowser/8.5.0.185/82/352/UCWEB Mobile,SAMSUNG-SCH-W259/W259DDDA2 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.102 (GUI) MMP/2.0 Untrusted/1.0'
     family: 'Samsung w259'

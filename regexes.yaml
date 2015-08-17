@@ -28,7 +28,6 @@ user_agent_parsers:
 
   # Downloader ...
   - regex: '(Google-HTTP-Java-Client|Apache-HttpClient|http%20client|Python-urllib|HttpMonitor|TLSProber|WinHTTP|JNLP)(?:[ /](\d+)(?:\.(\d+)(?:\.(\d+))?)?)?'
-    family_replacement: '$1'
 
   # Bots
   - regex: '(1470\.net crawler|50\.nu|8bo Crawler Bot|Aboundex|Accoona-[A-z]+-Agent|AdsBot-Google(?:-[a-z]+)?|altavista|AppEngine-Google|archive.*?\.org_bot|archiver|Ask Jeeves|[Bb]ai[Dd]u[Ss]pider(?:-[A-Za-z]+)*|bingbot|BingPreview|blitzbot|BlogBridge|BoardReader(?: [A-Za-z]+)*|boitho.com-dc|BotSeer|\b\w*favicon\w*\b|\bYeti(?:-[a-z]+)?|Catchpoint bot|[Cc]harlotte|Checklinks|clumboot|Comodo HTTP\(S\) Crawler|Comodo-Webinspector-Crawler|ConveraCrawler|CRAWL-E|CrawlConvera|Daumoa(?:-feedfetcher)?|Feed Seeker Bot|findlinks|Flamingo_SearchEngine|FollowSite Bot|furlbot|Genieo|gigabot|GomezAgent|gonzo1|(?:[a-zA-Z]+-)?Googlebot(?:-[a-zA-Z]+)?|Google SketchUp|grub-client|gsa-crawler|heritrix|HiddenMarket|holmes|HooWWWer|htdig|ia_archiver|ICC-Crawler|Icarus6j|ichiro(?:/mobile)?|IconSurf|IlTrovatore(?:-Setaccio)?|InfuzApp|Innovazion Crawler|InternetArchive|IP2[a-z]+Bot|jbot\b|KaloogaBot|Kraken|Kurzor|larbin|LEIA|LesnikBot|Linguee Bot|LinkAider|LinkedInBot|Lite Bot|Llaut|lycos|Mail\.RU_Bot|masidani_bot|Mediapartners-Google|Microsoft .*? Bot|mogimogi|mozDex|MJ12bot|msnbot(?:-media *)?|msrbot|netresearch|Netvibes|NewsGator[^/]*|^NING|Nutch[^/]*|Nymesis|ObjectsSearch|Orbiter|OOZBOT|PagePeeker|PagesInventory|PaxleFramework|Peeplo Screenshot Bot|PlantyNet_WebRobot|Pompos|Read%20Later|Reaper|RedCarpet|Retreiver|Riddler|Riddler|Rival IQ|scooter|Scrapy|Scrubby|searchsight|seekbot|semanticdiscovery|Simpy|SimplePie|SEOstats|SimpleRSS|Slurp|snappy|Speedy Spider|Squrl Java|TheUsefulbot|ThumbShotsBot|Thumbshots\.ru|TwitterBot|URL2PNG|Vagabondo|VoilaBot|^vortex|Votay bot|^voyager|WASALive.Bot|Web-sniffer|WebThumb|WeSEE:[A-z]+|WhatWeb|WIRE|WordPress|Wotbox|www\.almaden\.ibm\.com|Xenu(?:.s)? Link Sleuth|Xerka [A-z]+Bot|yacy(?:bot)?|Yahoo[a-z]*Seeker|Yahoo! Slurp|Yandex\w+|YodaoBot(?:-[A-z]+)?|YottaaMonitor|Yowedo|^Zao|^Zao-Crawler|ZeBot_www\.ze\.bz|ZooShot|ZyBorg)(?:[ /]v?(\d+)(?:\.(\d+)(?:\.(\d+))?)?)?'
@@ -1111,6 +1110,21 @@ device_parsers:
     device_replacement: 'Alcatel One Touch 918D'
     brand_replacement: 'Alcatel'
     model_replacement: 'One Touch 918D'
+  # A.F. (1)
+  - regex: '\((YARISXL|DIABLOX)\s'
+    device_replacement: 'Alcatel $1'
+    brand_replacement: 'Alcatel'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '\s(YARISXL|DIABLOX);'
+    device_replacement: 'Alcatel $1'
+    brand_replacement: 'Alcatel'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: 'TCT[ ALCATEL]* ONE TOUCH (\d{4}[A-Z])'
+    device_replacement: 'Alcatel One Touch $1 '
+    brand_replacement: 'Alcatel'
+    model_replacement: 'One Touch $1'
 
   #########
   # Allfine
@@ -1230,6 +1244,11 @@ device_parsers:
     brand_replacement: 'Archos'
     model_replacement: '$1'
   - regex: '; *(A28|A32|A43|A70(?:BHT|CHT|HB|S|X)|A101(?:B|C|IT)|A7EB|A7EB-WK|101G9|80G9) Build'
+    device_replacement: 'Archos $1'
+    brand_replacement: 'Archos'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '\((a50ne)\s'
     device_replacement: 'Archos $1'
     brand_replacement: 'Archos'
     model_replacement: '$1'
@@ -1600,6 +1619,12 @@ device_parsers:
     brand_replacement: 'Cubot'
     model_replacement: '$1'
 
+  # A.F. (1)
+  - regex: '\sCUBOT ([A-Z]{2}\d+\+);'
+    regex_flag: 'i'
+    device_replacement: '$1'
+    brand_replacement: 'Cubot'
+    model_replacement: '$1'
   #########
   # Danew
   # @ref: http://www.danew.com/produits-tablette.php
@@ -2566,6 +2591,11 @@ device_parsers:
     device_replacement: '$1 $2'
     brand_replacement: 'LG'
     model_replacement: '$2'
+    # A.F. (1)
+  - regex: '\((Nexus 5|hammerhead)[\s|\-]'
+    device_replacement: 'LG $1'
+    brand_replacement: 'LG'
+    model_replacement: '$1'
 
   #########
   # Malata
@@ -3391,7 +3421,7 @@ device_parsers:
     brand_replacement: 'Sony'
     model_replacement: '$1'
   - regex: '; Sony ([^;/]+) Build'
-    device_replacement: 'Sony $1'
+    device_replacement: '$1' # A.F. (1)
     brand_replacement: 'Sony'
     model_replacement: '$1'
   - regex: '; *(Sony)([A-Za-z0-9\-]+) Build'
@@ -3411,6 +3441,42 @@ device_parsers:
     brand_replacement: 'Sony'
     model_replacement: '$1'
   - regex: '; *(NW-Z1000Series) Build'
+    device_replacement: '$1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
+    #A.F. (1)
+  - regex: '.*\((SGP\d{3}|SGPT\d{2})\s[0-9.\a-zA-Z]+\)'
+    device_replacement: '$1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
+    #A.F. (1)
+  - regex: '.*\(([C|D]\d{4})\s[0-9.\a-zA-Z]+\)'
+    device_replacement: '$1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
+    #A.F. (1)
+  - regex: '^([C|D]\d{4});\s.*'
+    device_replacement: '$1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
+    #A.F. (1)
+#  - regex: '^([C\d{2}|D22|D24|D25|D51|D55|D57|D58|D65|D66|D67|E23]+[\d{2}]+)'
+  - regex: '^([C|D]\d{4})'
+    device_replacement: '$1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
+    #A.F. (1)
+  - regex: '[\s|\(]([C|D]\d{4})[\)|;.*|\s]'
+    device_replacement: '$1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
+    #A.F. (1)
+  - regex: '; Sony ([A-Z]{2}\d+[a-z]);'
+    device_replacement: '$1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
+    #A.F. (1)
+  - regex: '\sSony/([C|D]\d{4})'
     device_replacement: '$1'
     brand_replacement: 'Sony'
     model_replacement: '$1'
@@ -3588,6 +3654,7 @@ device_parsers:
   #########
   # Tomtec
   # @ref: http://www.tom-tec.eu/pages/tablets.php
+  # @note: ~GP: needs login on tom-tec website to view useragent strings. best guess supplied.
   #########
   - regex: ' (ATP[0-9]{4}) Build'
     device_replacement: '$1'
@@ -3752,6 +3819,11 @@ device_parsers:
     device_replacement: 'Wiko $1'
     brand_replacement: 'Wiko'
     model_replacement: '$1'
+  # A.F. (1)
+  - regex: '(\(wiko\s.*|\swiko;)'
+    device_replacement: 'Wiko wiko'
+    brand_replacement: 'Wiko'
+    model_replacement: 'wiko'
 
   #########
   # WellcoM
@@ -3820,7 +3892,21 @@ device_parsers:
     device_replacement: 'XiaoMi $1'
     brand_replacement: 'XiaoMi'
     model_replacement: '$1'
-
+  #A.F. (1)
+  - regex: '; *(MI\s\d[A-Z]{1,2})\sMIUI'
+    device_replacement: 'XiaoMi $1'
+    brand_replacement: 'XiaoMi'
+    model_replacement: '$1'
+  #A.F. (1)
+  - regex: '; *(HM\s\d[A-Z]{1,2})\sMIUI'
+    device_replacement: 'XiaoMi $1'
+    brand_replacement: 'XiaoMi'
+    model_replacement: '$1'
+  #A.F. (1)
+  - regex: '; *(HM\sNOTE\s\d[A-Z]{1,2})\sMIUI'
+    device_replacement: 'XiaoMi $1'
+    brand_replacement: 'XiaoMi'
+    model_replacement: '$1'
   #########
   # Xolo
   # @ref: http://www.xolo.in/
@@ -4263,7 +4349,7 @@ device_parsers:
   # @note: on some ua the device can be identified e.g. iPhone5,1
   # A.F. Changed regex to remove ,
   #- regex: '((?:iPhone|iPad|iPod)\d+,\d+)'
-  - regex: '(iPhone|iPad|iPod)(\d+),\d+'
+  - regex: '(iPhone|iPad|iPod)\s?(\d+),\d+'
     device_replacement: '$1$2'
     brand_replacement: 'Apple'
     model_replacement: '$2'
@@ -4298,7 +4384,7 @@ device_parsers:
     model_replacement: 'iOS-Device'
   # A.F @note: iOS applications do not show device info
   #- regex: '(\(iOS|iOS/\d\.\d|iOS]|_ios_|-iOS-iOS;)'
-  - regex: '(iOS|_ios_)'
+  - regex: 'iOS|_ios_'
     device_replacement: 'iOS-Device'
     brand_replacement: 'Apple'
     model_replacement: 'iOS-Device'
@@ -4339,7 +4425,7 @@ device_parsers:
     brand_replacement: 'Asus'
     model_replacement: '$1'
 
-
+  
   ##########
   # Bird
   ##########
@@ -4352,6 +4438,11 @@ device_parsers:
   # Dell
   ##########
   - regex: '\bDell ([A-Za-z0-9]+)'
+    device_replacement: 'Dell $1'
+    brand_replacement: 'Dell'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '\((EP|Venue7|yellowtail|Venue8|BB|thunderbird|LW)[\s|;|\)]'
     device_replacement: 'Dell $1'
     brand_replacement: 'Dell'
     model_replacement: '$1'
@@ -4380,6 +4471,21 @@ device_parsers:
     brand_replacement: 'HTC'
     model_replacement: '$1'
 
+  # A.F. (1)
+  - regex: '\(htc_(.*)\s.*\)'
+    device_replacement: 'HTC $1'
+    brand_replacement: 'HTC'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '(k2ul|z4u|villec2|protou|golfu|pyramid|bravo)\s.*'
+    device_replacement: 'HTC $1'
+    brand_replacement: 'HTC'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '(dlpdwg|shooteru|m7|ville|enrc2b|t6uhl|evita|m4|t6wl|t6ul|m7cdwg|fireball|m7wls|t6dug|m7cdug|dlpdtu|zaracl|dlxpul|m7cdtu|endeavoru|t6whl|dlxub1|shooter|jewel|dlpdug|vivo|dlxu|m7wlv|t6tl|saga|dlx|m7wlj|t6dwg|primou)[\s|;|\)]'
+    device_replacement: 'HTC $1'
+    brand_replacement: 'HTC'
+    model_replacement: '$1'
   ##########
   # Huawei
   ##########
@@ -4395,6 +4501,21 @@ device_parsers:
     device_replacement: 'Huawei Vodafone $1'
     brand_replacement: 'Huawei'
     model_replacement: 'Vodafone $1'
+    #A.F. (1)
+  - regex: ';\sHUAWEI\s([A-Z]\d{3}\-[A-Z]\d+);'
+    device_replacement: 'Huawei $1'
+    brand_replacement: 'Huawei'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '\(([hw|HW]+[P|p|G|H|Y|C|mt|MT|s|hn|Che|B|Y|SC|h|D]+[\d|ol|RA]+[\-\d]*[a-lA-Z]*)[\s|;|\)]'
+    device_replacement: 'Huawei $1'
+    brand_replacement: 'Huawei'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '\((d-01G|hwPE|hwCHM-Q|KVY625-U|Che1)[\s|;|\)]'
+    device_replacement: 'Huawei $1'
+    brand_replacement: 'Huawei'
+    model_replacement: '$1'
 
   ##########
   # i-mate
@@ -4420,6 +4541,21 @@ device_parsers:
   # lenovo
   ##########
   - regex: 'Lenovo[_\-]([A-Za-z0-9]+)'
+    device_replacement: 'Lenovo $1'
+    brand_replacement: 'Lenovo'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '\((p700|A8-50F|S650_ROW|sisleyr_amx|S960_ROW|A808t-i|A7000-a|S660|kitone|A780e|S860|A3300-HV|A328|sisleyw|A3300-H|S5000|A916|s7|X2-AP|A858|Aiken|sisleylt|A1900|aiocmcc_ttp|YT2|kingdomt|PC-TE510S1_nec|A3500HV|A320t|A3500F|Kraft-TM|B6000|S960|A7-30TC|Kraft-A6000|508T1W|B8080|A8-50L|A358t|LenovoA588t|A806|K900|A368t|S658t|A560_msm8212|LIFETAB_S785X|A380e|A7600-H|msm8960|B8000)[\s|;|\)]'
+    device_replacement: 'Lenovo $1'
+    brand_replacement: 'Lenovo'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '\((A808t|S8-50F|S820|A2800-d|P780_ROW|X2-EU|shellt|PC-TE508S1_nec|A7600|A10-70F|A7600-HV|708T1W|Kraft-T|Selected|A380t|A7-30F|S898tp|X2-TR|LIFETAB_S1033X|K910L|A10-70L|airplayw|shellr_s|shelle|A360t|A788t|airplayep|A606|P90|airplayt|lifetab_p891x|shellr|Kraft-W|S850t|S850t|A355e|aio_otfp|A785e|A3500FL|A10_80HC|S8-50L|A536|S939|A3800-d|sisley[lr|l|e|t|lw]|kingdom_row|S8-50LC|X2-TO|A7-30GC|A936|S920)[\s|;|\)]'
+    device_replacement: 'Lenovo $1'
+    brand_replacement: 'Lenovo'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '\((A858t|A7-30HC|P780|z2r|z2w|A7-30H|K80M|P70-t|A5000|A3600-d|A338t|A938t|A5500-HV|A3500H|A5800-D|A328t|A5500-F|airbuse|A5500-H|A3300-T|aiocu_wtfp|A8-50LC|A505e|A616|Kraft-E|z2t|S820_ROW|LIFETAB_E732X|Kraft-A6000-l|ThinkVision28|X2-CU|S930_ROW|A330e|A3300-GV|A560_msm8610|P70-A|A7600-F|A690e|S930|A319|kiton|S920_ROW|S650|S850|Tab2A7-10F|shellw|S938t|A688t|shellamx|S580)[\s|;|\)]'
     device_replacement: 'Lenovo $1'
     brand_replacement: 'Lenovo'
     model_replacement: '$1'
@@ -4495,6 +4631,31 @@ device_parsers:
     brand_replacement: 'LG'
     model_replacement: '$1'
 
+  # A.F. (1)
+  - regex: '^(LG\-\d{2,3}/)'
+    device_replacement: 'LG $1'
+    brand_replacement: 'LG'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: 'LGE/(Nexus_\d)'
+    device_replacement: 'LG $1'
+    brand_replacement: 'LG'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '[\(|\s](e8wifi|w35ds|awifi|my70ds|geehrc4g|jag3gss|geehrc|lo_2_ds|bass|vu2u|e9lte|luv30ss|vu3|c50|vfp|w7n|b2lssn|c50ds|y25|w5ds|e9wifi|vee7e|geefhd|luv50ss|luv90nfc|luv30ds|geeb|b2l|f6|e2ds|c70ds|jagnm|e8lte|w55ds|my50ds|l70p|luv20ts|w5ts|luv20ss|tiger6|lo_2|x5|w3ts)[\s|;|\)]'
+    device_replacement: 'LG $1'
+    brand_replacement: 'LG'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '[\(|\s](vfpv|palman|e2nas|liger|w5c|omegar|e9wifin|e2n|lenok|e2|w55|mc90|vu2sk|p1|w7|fx3q|my90|b1w|DM-01G|tigers|vee7ds|gvfhd|l70pds|w5n|jag3gds|jagc|luv50ssn|mc90ds|luv90ss|w35|omega|my90ds|g2mss|y50c|geefhd4g|e7iilte|luv90ds|b2ldsn|dory|g3|g4stylusc|c70n|luv80ds|w3voip|aka|w3c)[\s|;|\)]'
+    device_replacement: 'LG $1'
+    brand_replacement: 'LG'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '[\(|\s](f70n|c50n|g4stylusw|l70pn|zee|g2mds|w6ds|f70|w3ds|e7wifi|w7ds|fx1sk|my70|y50|luv20ds|c70w|w6|lo_1|w55n|e2nav|b2ln|b2lds|z2|e2nam|w7dsn|l9ii|g2m|luv80ss|b1|e2jps|altev|my50|g4stylusn|b2lss|g2mv|x10|w5|w3|e2nac|jagdsnm|jagn|c70|y25c|vu2kt|luv50ds)[\s|;|\)]'
+    device_replacement: 'LG $1'
+    brand_replacement: 'LG'
+    model_replacement: '$1'
   ##########
   # microsoft
   ##########
@@ -4533,6 +4694,26 @@ device_parsers:
     model_replacement: '$1'
     # A.F. MotoE2
   - regex: '(MotoE2\(4G-LTE\))'
+    device_replacement: 'Motorola $1'
+    brand_replacement: 'Motorola'
+    model_replacement: '$1'
+    # A.F. (1)
+  - regex: '\((g2)\s'
+    device_replacement: 'Motorola Nexus 6'
+    brand_replacement: 'Motorola'
+    model_replacement: 'Nexus 6'
+    # A.F. (1) ;XT1032; / '; XT1052;'
+  - regex: ';[\s]*(XT[0-9]{4});'
+    device_replacement: 'Motorola $1'
+    brand_replacement: 'Motorola'
+    model_replacement: '$1'
+    # A.F. (1) XT1032;
+  - regex: '^(XT[0-9]{4});'
+    device_replacement: 'Motorola $1'
+    brand_replacement: 'Motorola'
+    model_replacement: '$1'
+    # A.F. (1)
+  - regex: '[\(|\s](thea|titan_umtsds|hawk40_umts|vanquish_u|otus|smq_u|condor_udstv|cdma_spyder|titan_udstv|obake|smi|quark|ghost|hawk35_umts|minnow|cdma_targa|surnia_cdma|falcon_umtsds|quark_umts|surnia_uds|condor_cdma|otus_ds|condor_umts|edison|obake-maxx|condor_umtsds|victara|falcon_umts|surnia_umts|qinara|obakem|scorpion_mini|titan_umts|thea_umtsds|surnia_udstv|solstice|vanquish|cdma_maserati|umts_spyder|falcon_cdma|peregrine|smq)[\s|;]'
     device_replacement: 'Motorola $1'
     brand_replacement: 'Motorola'
     model_replacement: '$1'
@@ -4610,16 +4791,76 @@ device_parsers:
     brand_replacement: 'Samsung'
     model_replacement: '$1'
 
-  # A.F. ^SM-G800F;
+  # A.F. SM-G800F;
   - regex: '^(SM\-[A-Z][0-9]+[A-Z]*);'
     device_replacement: 'Samsung $1'
     brand_replacement: 'Samsung'
     model_replacement: '$1'
 
+  # A.F. (1)
+  - regex: '[\s|/|;|\(](SM\-[A-Z][0-9]+[A-Z]*)[;|\s|/|\)]'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+  # A.F. (1) Android (GT-I9505-jflte-user-4.2.2);
+  - regex: 'Android\s\((GT\-[A-Z][0-9]+)\-'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+  # A.F. (1) Android (GT-I9000 FROYO);
+  - regex: '[\(|\s|/](GT\-[A-Z][0-9]{3,4}[A-Za-z]*)[\s|;|/|\)|\(]'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+  # A.F. (1) ;GT-I9000
+  - regex: ';(GT\-[A-Z][0-9]{3,4}[A-Za-z]*)'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+  # A.F. (1) BRAND=samsung MODEL=GT-I9195, GT-P7510
+  - regex: 'BRAND=samsung\sMODEL=(GT\-[A-Z][0-9]{3,4}[A-Za-z]*)'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '(sc02|s3ve3g[a-z]*|serrano[ve|vo|ds]*[lte|3g]+[a-z]*|heat[nfc|q]*[3g|lte]+[a-z]*|klte[a-zA-Z]*|ks01lte[a-z]*|hlte[a-z0-9]*|golden[a-zA-Z0-9]*|jf[ve]*lte[a-zA-Z]*|trlte[a-z]*|kminilte[a-z]*|degas[ve]*[3g|wifi|lte]+[a-z0-9]*|t03g[a-z]*|baffinlite|m0[a-z]*|j1[3g|lte]+|j1nlte|maguro|skomer|kylepro[a-z]*|crespo|coriplus|santos103g|jfvelte|espresso[10]*[rf|wifi]+|kylevess|cs02[ve3g]*[a-z]*|zero[f]*lte[a-z]*)[\s|;|\)]'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+  # A.F. (1) ; Galaxy Nexus;
+  - regex: ';\s(Galaxy Nexus);'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
   # Other Samsung
   #- regex: 'SAMSUNG(?:; |-)([A-Za-z0-9\-]+)'
   - regex: 'SAMSUNG(?:; |[ -/])([A-Za-z0-9\-]+)'
     regex_flag: 'i'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '(fortuna[ve]*[lte|3g]+[a-z]*|melius[lte|3g]+[a-zA-Z0-9]*|chagall[wifi|lte|hlte]+[a-z]*|tb[e]*lte[a-z]+|ru+bens[wifi|lte]+[a-z]*|lt0[1|2|3]+[lte|wifi|3g]+[a-z]*|goyave[3g|wifi]+[a-zA-Z\d]*|d2cri|santos10[0-9a-z]+|higgs2g|e7[lte|3g]+[a-z]*|mproject[0-9a-z]+|q7[lteskt]*|rossalte[a-z]*|e5[3g|lte]+[a-z]*|kleoslte|tr[e]*[lte|3g]+[a-z]*|logan[lite3g|relte]*|kmini3g|klimt[lte|wifi]+[a-z]*|p4note[lte|wifi|rf]+[a-z]*|v1a[wifi|3g]+[a-z]*)[\s|;|\)]'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '(lentislte[a-z]+|ha3g|grandmaxlte[a-z]+|ja[lte|3g]+[a-z]*|a5[u]*[lte|3g]+[a-z]*|m0ctc[a-z]*|SPH-D710|marinelteatt|kanas[3ga-z]*|coreprimelte[a-z]*|millet[lte|wifi|3g]+[a-z]*|ms01[lte|3g]+[a-z]*|rubens[lte|wifi]+[a-z]*|a3[u]*[lte|3g]+[a-z]*|kwifi|k3g|trhplte|matisse[ve]*[lte|wifi|3g]+[a-z]*|t0[lte|3g]+[a-z]*)[\s|;|\)]'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '(trhplte|jftdd|gt5[note]*[8|10]+[wifi|lte]+[a-z]*|viennalte[a-z]+|a[5|7]+[a|u]*[lte|3g]+[a-z]*|apexqtmo|vivalto[3mve|nfc]*[3g|lte]*[a-z\d]*|mega2[lte|3g]+[a-z]*|afyonlte[a-zA-Z]+|k3g[a-zA-Z]*|kwifi[a-zA-Z]*|grandprimelte[a-z]*|s2vep|hl[lte|3g]+[a-z\d]*|mondrian[lte|wifi]+[a-z]*|d2vzw|d2lte[a-zA-Z]+|gt5note10[wifi|lte]+[a-z]*|tre[3g|3calte|lte]+[a-z]*|kona[lte|3g|wifi]+[a-z]*|d2aio|SCV31|vasta[lte|3g]+)[\s|;|\)]'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '(tb[e]*lte[a-z]+|young2[nfc|ve|ds]*[3g|2g]+[a-z]*|d2xar|d2tmo|jactivelte[a-z]*|htdlte|gardalteMetroPCS|m2a[3g|lte]+[a-z]*|megapluslte|m0cmcc|crater[q3g]*|SCT21|sprat|SC-03E|m3|404SC|a3ulte|wilcoxlte|m0ctcduos|^slte[a-z]*|SGH-T989|d2att|corsicave[ds]*3g[a-z]*|SC-02F|d2usc|c1[lgt|ktt|c1skt]+|a[3|5][ulte|lte|3g]+[a-z]*)[\s|;|\)]'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '(sf2wifi|jftdd|SC-0[1F|1G|2E|2G|2F|3G|4E|4G|4F|5G]+|pocket2[ss]*3g|d2spr|d2can|SCL24|d2spi|v2[lte|wifi]+|toroplus|k3g|mint|frescolte[a-z]+|SGH-[I777|T769|I727]|core33g|kccat6|kgedlte|d2mtr|montblanc3gctc|403SC|jgedlte|SCL2[2|3]+|c1ktt|victorlte|grandneove3g|d2vmu|pateklte)[\s|;|\)]'
     device_replacement: 'Samsung $1'
     brand_replacement: 'Samsung'
     model_replacement: '$1'
@@ -4652,7 +4893,7 @@ device_parsers:
   # SonyEricsson
   ##########
   - regex: 'SonyEricsson ?([A-Za-z0-9\-]+)'
-    device_replacement: 'Ericsson $1'
+    device_replacement: 'Sony Ericsson $1'
     brand_replacement: 'SonyEricsson'
     model_replacement: '$1'
 
@@ -4671,6 +4912,29 @@ device_parsers:
     # A.F. Sony Ericsson added for Android/5.0.2/C6833
   - regex: '\(ANDROID/[0-9\.]+/(C[0-9]+)\)'
     regex_flag: 'i'
+    device_replacement: 'Sony Ericsson $1'
+    brand_replacement: 'SonyEricsson'
+    model_replacement: '$1'
+  # (LT18i 4.0.2.A.0.62/ST27i 6.0.B.3.184)
+  - regex: '\((LT[0-9]+[a-z]*)\s[0-9a-zA-Z\.]+\)'
+    device_replacement: 'Sony Ericsson $1'
+    brand_replacement: 'SonyEricsson'
+    model_replacement: '$1'
+  - regex: '\((ST[0-9]+[a-z]*)\s[0-9a-zA-Z\.]+\)'
+    device_replacement: 'Sony Ericsson $1'
+    brand_replacement: 'SonyEricsson'
+    model_replacement: '$1'
+  # LT18i; 4.0.4; 4.1.B.0.587; sr-rs
+  - regex: '^(LT[0-9]+[a-z]*);'
+    device_replacement: 'Sony Ericsson $1'
+    brand_replacement: 'SonyEricsson'
+    model_replacement: '$1'
+  - regex: '^(ST[0-9]+[a-z]*);'
+    device_replacement: 'Sony Ericsson $1'
+    brand_replacement: 'SonyEricsson'
+    model_replacement: '$1'
+  # A.F. (1)
+  - regex: '(SOL23|SOL24|SOL25|SOL26|tetra|E2303|E2312|E2333|E2353|E2363|SO-0\d[E|F|G]|401SO)[\s|;|\)]'
     device_replacement: 'Sony Ericsson $1'
     brand_replacement: 'SonyEricsson'
     model_replacement: '$1'
@@ -4697,6 +4961,15 @@ device_parsers:
     brand_replacement: 'Generic'
     model_replacement: 'Smartphone'
 
+  #A.F. (1)
+  #########
+  # OnePlus
+  #########
+  - regex: '[\s|/|\(](OnePlus)[\)|/|\s]'
+    regex_flag: 'i'
+    device_replacement: 'OnePlus One'
+    brand_replacement: 'OnePlus'
+    model_replacement: 'One'
   #########
   # Android General Device Matching (far from perfect)
   #########
