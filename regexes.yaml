@@ -988,8 +988,19 @@ device_parsers:
   ######################################################################
 
   # Android Application
+
+  # A.F. (3)
+  - regex: 'Android Application[^\-]+ - Sony ([CD]\d{4}) \w+ - '
+    device_replacement: 'Sony $1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
+  # A.F. (3)
+  - regex: 'Android Application[^\-]+ - Sony ([A-Z]{2}\d{2}[a-z]) \w+ - '
+    device_replacement: 'Sony $1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
   - regex: 'Android Application[^\-]+ - (Sony) ?(Ericsson)? (.+) \w+ - '
-    device_replacement: '$1 $2'
+    device_replacement: '$1 $2 $3' # A.F. (3)
     brand_replacement: '$1$2'
     model_replacement: '$3'
   - regex: 'Android Application[^\-]+ - (?:HTC|HUAWEI|LGE|LENOVO|MEDION|TCT) (HTC|HUAWEI|LG|LENOVO|MEDION|ALCATEL)[ _\-](.+) \w+ - '
@@ -3416,12 +3427,17 @@ device_parsers:
   # @ref: http://www.sonymobile.com/global-en/products/phones/
   # @ref: http://www.sony.jp/tablet/
   #########
+  # A.F. (3)
+  - regex: 'Sony([A-Z]{1,2}\d+[a-z]\d*) Build'
+    device_replacement: 'Sony $1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
   - regex: '; Sony (Tablet[^;/]+) Build'
     device_replacement: 'Sony $1'
     brand_replacement: 'Sony'
     model_replacement: '$1'
   - regex: '; Sony ([^;/]+) Build'
-    device_replacement: '$1' # A.F. (1)
+    device_replacement: 'Sony $1' # A.F. (2)
     brand_replacement: 'Sony'
     model_replacement: '$1'
   - regex: '; *(Sony)([A-Za-z0-9\-]+) Build'
@@ -3433,53 +3449,71 @@ device_parsers:
     brand_replacement: 'Sony'
     model_replacement: '$1'
   - regex: '; *(C(?:1[0-9]|2[0-9]|53|55|6[0-9])[0-9]{2}|D[25]\d{3}|D6[56]\d{2}) Build'
-    device_replacement: '$1'
+    device_replacement: 'Sony $1'
     brand_replacement: 'Sony'
     model_replacement: '$1'
   - regex: '; *(SGP\d{3}|SGPT\d{2}) Build'
-    device_replacement: '$1'
+    device_replacement: 'Sony $1'
     brand_replacement: 'Sony'
     model_replacement: '$1'
   - regex: '; *(NW-Z1000Series) Build'
     device_replacement: '$1'
     brand_replacement: 'Sony'
     model_replacement: '$1'
-    #A.F. (1)
-  - regex: '.*\((SGP\d{3}|SGPT\d{2})\s[0-9.\a-zA-Z]+\)'
-    device_replacement: '$1'
+    #A.F. (2)
+  - regex: '.*\((SGP\d{3}|SGPT\d{2})\s.+\)'
+    device_replacement: 'Sony $1'
     brand_replacement: 'Sony'
     model_replacement: '$1'
-    #A.F. (1)
-  - regex: '.*\(([C|D]\d{4})\s[0-9.\a-zA-Z]+\)'
-    device_replacement: '$1'
+    #A.F. (2)
+  - regex: 'Sony(\s)?([A-Z]{1,2}\d+[[a-zA-Z]+\d+[a-zA-Z]*)'
+    device_replacement: 'Sony $1'
     brand_replacement: 'Sony'
     model_replacement: '$1'
-    #A.F. (1)
-  - regex: '^([C|D]\d{4});\s.*'
-    device_replacement: '$1'
+    #A.F. (2)
+  - regex: '([A-Z]{1,2}\d+[[a-zA-Z]+\d+[a-zA-Z]*)\sSony'
+    device_replacement: 'Sony $1'
     brand_replacement: 'Sony'
     model_replacement: '$1'
-    #A.F. (1)
+    #A.F. (3)
+  - regex: 'SonyEricsson\s*([A-Z]{1,2}\d+[a-zA-Z]+\d+[a-zA-Z]*)'
+    device_replacement: 'Sony Ericsson $1'
+    brand_replacement: 'SonyEricsson'
+    model_replacement: '$1'
+    #A.F. (2)
+  - regex: 'Sony ([A-Z]{1,2}\d+[a-zA-Z]+[\da-zA-Z]*)'
+    device_replacement: 'Sony $1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
+    #A.F. (2)
+  - regex: '\sSony[\s|/]*([C|D]\d{4})'
+    device_replacement: 'Sony $1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
+
+    #A.F. (2)
+  - regex: '^([C|D]\d{4})[;\s.*]*'
+    device_replacement: 'Sony $1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
+    #A.F. (2)
+  - regex: '\(([C|D]\d{4}|SGP\d{3}|SGPT\d{2})\s[0-9a-zA-Z]+\)'
+    device_replacement: 'Sony $1'
+    brand_replacement: 'Sony'
+    model_replacement: '$1'
+    #A.F. (2)
 #  - regex: '^([C\d{2}|D22|D24|D25|D51|D55|D57|D58|D65|D66|D67|E23]+[\d{2}]+)'
-  - regex: '^([C|D]\d{4})'
-    device_replacement: '$1'
-    brand_replacement: 'Sony'
-    model_replacement: '$1'
-    #A.F. (1)
+  #- regex: '^([CD]\d{4})'
+  #  device_replacement: 'Sony $1'
+  #  brand_replacement: 'Sony'
+  #  model_replacement: '$1'
+    #A.F. (2)
   - regex: '[\s|\(]([C|D]\d{4})[\)|;.*|\s]'
-    device_replacement: '$1'
+    device_replacement: 'Sony $1'
     brand_replacement: 'Sony'
     model_replacement: '$1'
-    #A.F. (1)
-  - regex: '; Sony ([A-Z]{2}\d+[a-z]);'
-    device_replacement: '$1'
-    brand_replacement: 'Sony'
-    model_replacement: '$1'
-    #A.F. (1)
-  - regex: '\sSony/([C|D]\d{4})'
-    device_replacement: '$1'
-    brand_replacement: 'Sony'
-    model_replacement: '$1'
+
+
 
   ##########
   # Sony PlayStation
@@ -4349,10 +4383,16 @@ device_parsers:
   # @note: on some ua the device can be identified e.g. iPhone5,1
   # A.F. Changed regex to remove ,
   #- regex: '((?:iPhone|iPad|iPod)\d+,\d+)'
-  - regex: '(iPhone|iPad|iPod)\s?(\d+),\d+'
+  # A.F. (2)
+  - regex: '(iPad|iPod)\s?(\d+),\d+'
     device_replacement: '$1$2'
     brand_replacement: 'Apple'
     model_replacement: '$2'
+  - regex: '(iPhone)\s?(\d+),\d+'
+    device_replacement: '$1'
+    brand_replacement: 'Apple'
+    model_replacement: 'iOS-Device'
+
   # @note: iPad needs to be before iPhone
   - regex: '(iPad)(?:;| Simulator;)'
     device_replacement: '$1'
@@ -4425,7 +4465,7 @@ device_parsers:
     brand_replacement: 'Asus'
     model_replacement: '$1'
 
-  
+
   ##########
   # Bird
   ##########
@@ -4767,6 +4807,18 @@ device_parsers:
     brand_replacement: 'Samsung'
     model_replacement: '$1'
 
+  # A.F. (2)
+  - regex: 'samsung; (SGH)-([A-Z][0-9]+[A-Z]*)'
+    device_replacement: 'Samsung $1-$2'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1-$2'
+  # A.F. (2)
+  - regex: 'samsung/([V|v]erizon);\s.*'
+    device_replacement: 'Samsung $1'
+    brand_replacement: 'Samsung'
+    model_replacement: '$1'
+
+
   # A.F. (GT-S7500 GINGERBREAD)
   - regex: '\((GT\-[A-Z][0-9]+[A-Za-z]*)\sGINGERBREAD\)'
     device_replacement: 'Samsung $1'
@@ -4896,7 +4948,11 @@ device_parsers:
     device_replacement: 'Sony Ericsson $1'
     brand_replacement: 'SonyEricsson'
     model_replacement: '$1'
-
+  # A.F. (3)
+  - regex: 'SonyEricsson([A-Za-z0-9]+)'
+    device_replacement: 'Sony Ericsson $1'
+    brand_replacement: 'SonyEricsson'
+    model_replacement: '$1'
   ##########
   # Sony
   ##########
